@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",             /* Node uses commonjs by default */
+    "rootDir": "./src",               /* Where your TS files are */
+    "outDir": "./dist",               /* Where compiled JS files go */
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
