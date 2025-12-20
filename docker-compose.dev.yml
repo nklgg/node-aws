@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      target: builder # Stops at Stage 1 of your Dockerfile
+    command: npm run dev # Assumes you have a 'dev' script (e.g., nodemon)
+    ports:
+      - "3000:3000"
+      - "9229:9229" # Debugger port
+    volumes:
+      - .:/app
+      - /app/node_modules # Prevents local node_modules from overwriting container's
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_DB}:5432/myapp
